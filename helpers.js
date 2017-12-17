@@ -14,7 +14,5 @@ module.exports = {
      * @param  {string} parameter Parameter to retreive.
      * @return {mixed}
      */
-    config: (parameter) => {
-        return dot.pick(parameter, require('./config'))
-    }
+    config: (parameter) => dot.pick(parameter, require('./config'))
 }
