@@ -25,6 +25,12 @@ Body:
 }
 ```
 
+### Users
+
+#### Get the currently logged in user
+
+GET `api/v1/users/me`
+
 ### Listings
 
 #### List listings
