@@ -14,6 +14,9 @@
         "passport-local": "^1.0.0"
     },
     "scripts": {
-        "watch": "nodemon app.js"
+        "watch": "yarn nodemon"
+    },
+    "devDependencies": {
+        "nodemon": "^1.13.3"
     }
 }

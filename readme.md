@@ -1,7 +1,12 @@
 # billie
 
-## Request Flow
+## Getting Started
 
+1. Clone the repository `git clone git@github.com/drewsymo/billie`
+2. Copy `.env.example` to `.env` and configure the settings
+3. Run `yarn install`
+4. Start the application by running `yarn watch`
+5. By default the application is available at `http://localhost:3000`
 
 ## API
 
