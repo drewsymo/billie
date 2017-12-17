@@ -9,12 +9,16 @@
         "dotenv": "^4.0.0",
         "express": "^4.16.2",
         "jsonwebtoken": "^8.1.0",
+        "mysql2": "^1.5.1",
         "passport": "^0.4.0",
         "passport-jwt": "^3.0.1",
-        "passport-local": "^1.0.0"
+        "passport-local": "^1.0.0",
+        "sequelize": "^4.28.5",
+        "sequelize-cli": "^3.2.0"
     },
     "scripts": {
-        "watch": "yarn nodemon"
+        "watch": "yarn nodemon",
+        "migrate": "yarn sequelize db:migrate"
     },
     "devDependencies": {
         "nodemon": "^1.13.3"
