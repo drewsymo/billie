@@ -1,6 +1,7 @@
 const { Strategy, ExtractJwt } = require('passport-local')
 const passport = require('passport')
 const { config } = require('../../helpers')
+const { User } = require('../../models')
 
 const opts = {
     usernameField: 'email',
@@ -9,13 +10,11 @@ const opts = {
 }
 
 module.exports = (app) => {
-    passport.use(new Strategy(opts, function(username, password, callback) {
+    passport.use(new Strategy(opts, function(email, password, callback) {
         // Find the user.
-        // Verify the password.
-        return callback(null, {
-            id: 'XXX-111',
-            name: 'Drew',
-            email: 'drew@gmail.com'
+        User.findOne( { where: { email } } ).then(user => {
+            // @todo Verify the password etc.
+            return callback(null, user)
         })
     }))
 }

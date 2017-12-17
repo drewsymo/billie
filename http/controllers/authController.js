@@ -15,7 +15,7 @@ module.exports = {
      */
     getToken: (request, response) => {
         const token = jwt.sign({
-            id: request.user.id
+            sub: request.user.id
         })
 
         return response.json({ data: { token } })

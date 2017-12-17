@@ -1,5 +1,5 @@
-const jwt = require('jsonwebtoken');
-const { config } = require('../helpers');
+const jwt = require('jsonwebtoken')
+const { config } = require('../helpers')
 
 module.exports = {
     /**

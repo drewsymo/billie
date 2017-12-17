@@ -1,5 +1,6 @@
 const { getListings, showListing, storeListing, updateListing, destroyListing } = require('./controllers/listingController')
 const { getToken, register } = require('./controllers/authController')
+const { getMe } = require('./controllers/userController')
 const authJwt = require('./middleware/authenticatesJwt')
 const authLocal = require('./middleware/authenticatesLocal')
 
@@ -13,6 +14,9 @@ module.exports = (app) => {
     // Auth.
     app.post('/api/v1/auth/token', authLocal, getToken)
     app.post('/api/v1/auth/register', register)
+
+    // Users,
+    app.get('/api/v1/users/me', authJwt, getMe)
 
     // Listings.
     app.get('/api/v1/listings', getListings)

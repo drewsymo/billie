@@ -1,6 +1,7 @@
 const { Strategy, ExtractJwt } = require('passport-jwt')
 const passport = require('passport')
 const { config } = require('../../helpers')
+const { User } = require('../../models')
 
 module.exports = (app) => {
 
@@ -10,8 +11,9 @@ module.exports = (app) => {
     }
 
     passport.use(new Strategy(opts, function(payload, callback) {
-        return callback(null, {
-            payload
+        console.log(payload)
+        User.findById(payload.sub).then(user => {
+            return callback(null, user)
         })
     }));
 
